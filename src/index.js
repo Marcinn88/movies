@@ -1,6 +1,3 @@
-// import './sass/index.scss';
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
 // import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
@@ -29,12 +26,10 @@ siteBtn.addEventListener("click",  (e) => {
   e.preventDefault();
   if (siteInput.value=='') {
   Notify.warning('Please type movie title') 
-  // const siteIco = document.querySelector('.ico').src = ''
-  // const siteCity = document.querySelector('.city').innerHTML = ''
-  // const siteTemp = document.querySelector('.temperature').innerHTML = ''
   } else checkMovie(siteInput.value.toLowerCase());
     })  
-const movieGallery = document.querySelector('.movie_gallery')
+
+    const movieGallery = document.querySelector('.movie_gallery')
 
     function onRenderGallery(elements) {
       const markup = elements
