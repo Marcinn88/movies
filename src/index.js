@@ -38,6 +38,7 @@ siteBtn.addEventListener("click",  (e) => {
             poster_path,
             title,
             overview,
+            popularity
           }) => {
             return `<div class="photo-card">
         <a href="#">
@@ -47,6 +48,9 @@ siteBtn.addEventListener("click",  (e) => {
           <p class="info-item">
              ${overview}
           </p>
+          <p class="info-item">
+          ${popularity}
+       </p>
         </div></div>`;
           }
         )
