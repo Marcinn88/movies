@@ -5,14 +5,11 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const apiKey = "?api_key=11f568ee70218bec08ad7368f7bb3250";
-// const apiUrl = "https://api.themoviedb.org/3/movie/550";
 const apiUrl = "https://api.themoviedb.org/3/search/movie";
 const siteInput = document.querySelector('.search-form__input')
 const siteBtn = document.querySelector('.search_button')
 const page = "1";
-// https://api.themoviedb.org/3/search/movie?api_key=11f568ee70218bec08ad7368f7bb3250&language=en-US&page=1&include_adult=false&query=
 
-// const movieTitle = "jaws";
 
 async function checkMovie(movieTitle){
 try {
@@ -27,7 +24,6 @@ try {
   console.error(error);
 }}
 
-// checkMovie(movieTitle)
 
 siteBtn.addEventListener("click",  (e) => {
   e.preventDefault();

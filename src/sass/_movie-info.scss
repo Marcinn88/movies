@@ -2,6 +2,9 @@
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
 .photo-card{
     width: 200px;
