@@ -12,7 +12,8 @@ async function checkMovie(movieTitle){
 try {
   const response = await fetch(apiUrl+`${apiKey}`+'&query='+ movieTitle+'&page='+ page);
   const data = await response.json();
-  console.log(data);
+  // data.sort(byPopularity(data.results))
+  console.log(data)
   movieGallery.innerHTML=''
    Notify.success('Hooray! We found movie. First result is '+ data.results[0].original_title)
    onRenderGallery(data.results)
@@ -59,12 +60,16 @@ siteBtn.addEventListener("click",  (e) => {
     }
 
 
-    function byPopularity(a,b){
-      if (a.popularity > b.popularity) {
-        return 1;
-      } else if (b.popularity > a.popularity){
-        return -1;
-      } else {
-        return 0;
-      }
-    }
+    // function byPopularity(a,b){
+    //   if (a.popularity > b.popularity) {
+    //     return 1;
+    //   } else if (b.popularity > a.popularity){
+    //     return -1;
+    //   } else {
+    //     return 0;
+    //   }
+    // }
+
+// function byPopularity(a,b){
+//   return parseInt(a.popularity) - parseInt(b.popularity)
+// }
