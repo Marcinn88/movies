@@ -62,6 +62,9 @@ siteBtn.addEventListener("click",  (e) => {
           <img class="photo-img" src="https://image.tmdb.org/t/p/w185${poster_path}" alt="${title}" loading="lazy" />
         </a>
         <div class="info">
+        <p class="info-item title-item">
+        ${title}
+     </p>
           <p class="info-item">
              ${overview}
           </p>
