@@ -59,7 +59,7 @@ siteBtn.addEventListener("click",  (e) => {
           }) => {
             return `<div class="photo-card">
         <a href="#">
-          <img class="photo-img" src="https://image.tmdb.org/t/p/w185${poster_path}" onerror="this.src='./images/deafult.jpg'" alt="${title}" loading="lazy" />
+          <img class="photo-img" src="https://image.tmdb.org/t/p/w185${poster_path}" onerror="this.onerror=null;this.src='./images/default.jpg';" alt="${title}" loading="lazy" />
         </a>
         <div class="info">
         <p class="info-item title-item">
