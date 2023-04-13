@@ -53,21 +53,41 @@ siteBtn.addEventListener("click",  (e) => {
             overview,
             popularity
           }) => {
-            return `<div class="photo-card">
-        <a href="#">
-          <img class="photo-img" src="https://image.tmdb.org/t/p/w185${poster_path}" onerror="this.onerror=null;this.src='./images/default.jpg';" alt="${title}" loading="lazy" />
-        </a>
-        <div class="info">
-        <p class="info-item title-item">
-        ${title}
-     </p>
-          <p class="info-item">
-             ${overview}
-          </p>
-          <p class="info-item">
-          ${popularity}
-       </p>
-        </div></div>`;
+
+            if (poster_path!==null) {
+              return `<div class="photo-card">
+              <a href="#">
+                <img class="photo-img" src="https://image.tmdb.org/t/p/w185${poster_path}" alt="${title}" loading="lazy" />
+              </a>
+              <div class="info">
+              <p class="info-item title-item">
+              ${title}
+           </p>
+                <p class="info-item">
+                   ${overview}
+                </p>
+                <p class="info-item">
+                ${popularity}
+             </p>
+              </div></div>`;
+            } else {
+              return `<div class="photo-card">
+              <a href="#">
+                <img class="photo-img" src="./images/default.jpg" alt="${title}" />
+              </a>
+              <div class="info">
+              <p class="info-item title-item">
+              ${title}
+           </p>
+                <p class="info-item">
+                   ${overview}
+                </p>
+                <p class="info-item">
+                ${popularity}
+             </p>
+              </div></div>`;
+            }
+
           }
         )
         .join('');
