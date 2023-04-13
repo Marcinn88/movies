@@ -4,14 +4,16 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const apiKey = "?api_key=11f568ee70218bec08ad7368f7bb3250";
 const apiUrl = "https://api.themoviedb.org/3/search/movie";
-const discoverUrl = "https://api.themoviedb.org/3/discover/movie"
+// const discoverUrl = "https://api.themoviedb.org/3/discover/movie"
+const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 const page = "1";
 
 async function checkPopular(){
   try{
-    const response = await fetch(discoverUrl+apiKey+'&sort_by=popularity.desc')
+    // const response = await fetch(discoverUrl+apiKey+'&sort_by=popularity.desc')
+    const response = await fetch(popularUrl+apiKey+'&page='+page)
     const data = await response.json();
     console.log(data)
     onRenderGallery(data.results)
