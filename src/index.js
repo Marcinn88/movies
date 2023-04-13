@@ -8,9 +8,6 @@ const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 const page = "1";
 
-//https://api.themoviedb.org/3/discover/movie?api_key=11f568ee70218bec08ad7368f7bb3250&language=en-US
-//&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate
-
 async function checkPopular(){
   try{
     const response = await fetch(discoverUrl+apiKey+'&sort_by=popularity.desc')
@@ -28,7 +25,6 @@ async function checkMovie(movieTitle){
 try {
   const response = await fetch(apiUrl+apiKey+'&query='+ movieTitle+'&page='+ page);
   const data = await response.json();
-  // data.sort(byPopularity(data.results))
   console.log(data)
   movieGallery.innerHTML=''
    Notify.success('Hooray! We found movie. First result is '+ data.results[0].original_title)
