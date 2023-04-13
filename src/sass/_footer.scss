@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 50px;
+    }
+    li{
+        display: flex;
+        width: 50px;
+        justify-content: center;
+        border-radius: 25%;
+    }
+    li:hover{
+        cursor: pointer;
+        background-color: rgb(212, 123, 50) ;
+        color: white;
+
+    }
+}
