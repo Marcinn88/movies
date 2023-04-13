@@ -1,4 +1,5 @@
 // import axios from 'axios';
+import defaultImage from "./images/default.jpg"
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const apiKey = "?api_key=11f568ee70218bec08ad7368f7bb3250";
@@ -73,7 +74,7 @@ siteBtn.addEventListener("click",  (e) => {
             } else {
               return `<div class="photo-card">
               <a href="#">
-                <img class="photo-img" src="./images/default.jpg" alt="${title}" loading="lazy"/>
+                <img class="photo-img" src="${defaultImage}" alt="${title}" loading="lazy"/>
               </a>
               <div class="info">
               <p class="info-item title-item">
