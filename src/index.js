@@ -73,7 +73,7 @@ siteBtn.addEventListener("click",  (e) => {
             } else {
               return `<div class="photo-card">
               <a href="#">
-                <img class="photo-img" src="./images/default.jpg" alt="${title}" />
+                <img class="photo-img" src="./images/default.jpg" alt="${title}" loading="lazy"/>
               </a>
               <div class="info">
               <p class="info-item title-item">
