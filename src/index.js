@@ -141,7 +141,8 @@ const onRenderFooter = (page) => {
         <li class="footer-6-element" id=${parseInt(page)+2}><p>${parseInt(page)+2}</p></li>
         <li class="footer-7-element" id=${parseInt(page)+3}><p>${parseInt(page)+3}</p></li>
       </ul>`
-    footer.insertAdjacentHTML('beforeend', markup);} 
+    footer.insertAdjacentHTML('beforeend', markup);
+  return} 
     else{  
       const markup =  `
       <ul class="footer-list">
@@ -153,7 +154,8 @@ const onRenderFooter = (page) => {
         <li class="footer-6-element" id=6><p>6</p></li>
         <li class="footer-7-element" id=7><p>7</p></li>
       </ul>`
-    footer.insertAdjacentHTML('beforeend', markup);}
+    footer.insertAdjacentHTML('beforeend', markup);
+  return}
 }
 
 // -------------------------------------------------
