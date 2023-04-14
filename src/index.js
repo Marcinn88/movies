@@ -9,7 +9,7 @@ const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 let page = 1;
-
+const footer = document.querySelector('.footer')
 async function checkPopular(){
   try{
     // const response = await fetch(discoverUrl+apiKey+'&sort_by=popularity.desc')
@@ -98,77 +98,80 @@ siteBtn.addEventListener("click",  (e) => {
     }
 
 
-function onRenderFooter(page) {
-  const footer = document.querySelector('.footer')
+// function onRenderFooter(page) {
+//   const footer = document.querySelector('.footer')
+//   if(page>3){
+//   footer.innerHTML =`
+//   <ul class="footer-list">
+//     <li class="footer-1-element" id=${page-3}><p>${page-3}</p></li>
+//     <li class="footer-2-element" id=${page-2}><p>${page-2}</p></li>
+//     <li class="footer-3-element" id=${page-1}><p>${page-1}</p></li>
+//     <li class="footer-4-element" id=${page}><p>${page}</p></li>
+//     <li class="footer-5-element" id=${parseInt(page)+1}><p>${parseInt(page)+1}</p></li>
+//     <li class="footer-6-element" id=${parseInt(page)+2}><p>${parseInt(page)+2}</p></li>
+//     <li class="footer-7-element" id=${parseInt(page)+3}><p>${parseInt(page)+3}</p></li>
+//   </ul>`;} 
+//   else
+//   {  footer.innerHTML =`
+//   <ul class="footer-list">
+//     <li class="footer-1-element" id=1><p>1</p></li>
+//     <li class="footer-2-element" id=2><p>2</p></li>
+//     <li class="footer-3-element" id=3><p>3</p></li>
+//     <li class="footer-4-element" id=4><p>4</p></li>
+//     <li class="footer-5-element" id=5><p>5</p></li>
+//     <li class="footer-6-element" id=6><p>6</p></li>
+//     <li class="footer-7-element" id=7><p>7</p></li>
+//   </ul>`;}
+// }
+
+
+// -------------------------------------------------
+
+
+const onRenderFooter = (page) => {
+  footer.innerHTML=''
   if(page>3){
-  footer.innerHTML =`
-  <ul class="footer-list">
-    <li class="footer-1-element" id=${page-3}><p>${page-3}</p></li>
-    <li class="footer-2-element" id=${page-2}><p>${page-2}</p></li>
-    <li class="footer-3-element" id=${page-1}><p>${page-1}</p></li>
-    <li class="footer-4-element" id=${page}><p>${page}</p></li>
-    <li class="footer-5-element" id=${parseInt(page)+1}><p>${parseInt(page)+1}</p></li>
-    <li class="footer-6-element" id=${parseInt(page)+2}><p>${parseInt(page)+2}</p></li>
-    <li class="footer-7-element" id=${parseInt(page)+3}><p>${parseInt(page)+3}</p></li>
-  </ul>`;} 
-  else
-  {  footer.innerHTML =`
-  <ul class="footer-list">
-    <li class="footer-1-element" id=1><p>1</p></li>
-    <li class="footer-2-element" id=2><p>2</p></li>
-    <li class="footer-3-element" id=3><p>3</p></li>
-    <li class="footer-4-element" id=4><p>4</p></li>
-    <li class="footer-5-element" id=5><p>5</p></li>
-    <li class="footer-6-element" id=6><p>6</p></li>
-    <li class="footer-7-element" id=7><p>7</p></li>
-  </ul>`;}
+    const markup = `
+      <ul class="footer-list">
+        <li class="footer-1-element" id=${parseInt(page)-3}><p>${parseInt(page)-3}</p></li>
+        <li class="footer-2-element" id=${parseInt(page)-2}><p>${parseInt(page)-2}</p></li>
+        <li class="footer-3-element" id=${parseInt(page)-1}><p>${parseInt(page)-1}</p></li>
+        <li class="footer-4-element" id=${parseInt(page)}><p>${parseInt(page)}</p></li>
+        <li class="footer-5-element" id=${parseInt(page)+1}><p>${parseInt(page)+1}</p></li>
+        <li class="footer-6-element" id=${parseInt(page)+2}><p>${parseInt(page)+2}</p></li>
+        <li class="footer-7-element" id=${parseInt(page)+3}><p>${parseInt(page)+3}</p></li>
+      </ul>`
+    footer.insertAdjacentHTML('beforeend', markup);} 
+    else{  
+      const markup =  `
+      <ul class="footer-list">
+        <li class="footer-1-element" id=1><p>1</p></li>
+        <li class="footer-2-element" id=2><p>2</p></li>
+        <li class="footer-3-element" id=3><p>3</p></li>
+        <li class="footer-4-element" id=4><p>4</p></li>
+        <li class="footer-5-element" id=5><p>5</p></li>
+        <li class="footer-6-element" id=6><p>6</p></li>
+        <li class="footer-7-element" id=7><p>7</p></li>
+      </ul>`
+    footer.insertAdjacentHTML('beforeend', markup);}
 }
-onRenderFooter(page)
 
+// -------------------------------------------------
+
+
+onRenderFooter(page)
 const pageLink1 = document.querySelector('.footer-1-element');
-pageLink1.addEventListener('click', (page) => {
-page = pageLink1.id
-console.log(page)
-onRenderFooter(page)
-})
-
 const pageLink2 = document.querySelector('.footer-2-element');
-pageLink2.addEventListener('click', (page) => {
-page = pageLink2.id
-console.log(page)
-onRenderFooter(page)
-})
-
 const pageLink3 = document.querySelector('.footer-3-element');
-pageLink3.addEventListener('click', (page) => {
-page = pageLink3.id
-console.log(page)
-onRenderFooter(page)
-})
-
 const pageLink4 = document.querySelector('.footer-4-element');
-pageLink4.addEventListener('click', (page) => {
-page = pageLink4.id
-console.log(page)
-onRenderFooter(page)
-})
-
 const pageLink5 = document.querySelector('.footer-5-element');
-pageLink5.addEventListener('click', (page) => {
-page = pageLink5.id
-console.log(page)
-onRenderFooter(page)
-})
-
 const pageLink6 = document.querySelector('.footer-6-element');
-pageLink6.addEventListener('click', (page) => {
-page = pageLink6.id
-console.log(page)
-onRenderFooter(page)
-})
-
 const pageLink7 = document.querySelector('.footer-7-element');
-pageLink7.addEventListener('click', (page) => {
-page = pageLink7.id
-onRenderFooter(page)
-})
+
+pageLink1.addEventListener('click', (page) => {page = pageLink1.id; console.log(page); onRenderFooter(page)});
+pageLink2.addEventListener('click', (page) => {page = pageLink2.id; console.log(page); onRenderFooter(page)});
+pageLink3.addEventListener('click', (page) => {page = pageLink3.id; console.log(page); onRenderFooter(page)});
+pageLink4.addEventListener('click', (page) => {page = pageLink4.id; console.log(page); onRenderFooter(page)});
+pageLink5.addEventListener('click', (page) => {page = pageLink5.id; console.log(page); onRenderFooter(page)});
+pageLink6.addEventListener('click', (page) => {page = pageLink6.id; console.log(page); onRenderFooter(page)});
+pageLink7.addEventListener('click', (page) => {page = pageLink7.id; console.log(page); onRenderFooter(page)});
