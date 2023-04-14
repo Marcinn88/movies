@@ -8,7 +8,7 @@ const apiUrl = "https://api.themoviedb.org/3/search/movie";
 const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
-let page = 1;
+let page = 8;
 
 async function checkPopular(){
   try{
@@ -103,13 +103,13 @@ function onRenderFooter(page) {
   if(page>3){
   footer.innerHTML =`
   <ul class="footer-list">
-    <li class="footer-1-element" id=`+page-3+`><p>`+page-3+`</p></li>
-    <li class="footer-2-element" id=`+page-2+`><p>`+page-2+`</p></li>
-    <li class="footer-3-element" id=`+page-1+`><p>`+page-1+`</p></li>
-    <li class="footer-4-element" id=`+page+`<p>`+page+`</p></li>
-    <li class="footer-5-element" id=`+page+1`><p>`+page+1`</p></li>
-    <li class="footer-6-element" id=`+page+2+`><p>`+page+2+`</p></li>
-    <li class="footer-7-element" id=`+page+3+`><p>`+page+3+`</p></li>
+    <li class="footer-1-element" id=${page-3}><p>${page-3}</p></li>
+    <li class="footer-2-element" id=${page-2}><p>${page-2}</p></li>
+    <li class="footer-3-element" id=${page-1}><p>${page-1}</p></li>
+    <li class="footer-4-element" id=${page}><p>${page}</p></li>
+    <li class="footer-5-element" id=${page+1}><p>${page+1}</p></li>
+    <li class="footer-6-element" id=${page+2}><p>${page+2}</p></li>
+    <li class="footer-7-element" id=${page+3}><p>${page+3}</p></li>
   </ul>`;} 
   else
   {  footer.innerHTML =`
@@ -123,46 +123,46 @@ function onRenderFooter(page) {
     <li class="footer-7-element" id=7><p>7</p></li>
   </ul>`;}
 }
-// onRenderFooter(page)
+onRenderFooter(page)
 
-// const pageLink1 = document.querySelector('.footer-1-element');
-// pageLink1.addEventListener('click', () => {
-// page = pageLink1.id
-// console.log(page)
-// })
+const pageLink1 = document.querySelector('.footer-1-element');
+pageLink1.addEventListener('click', () => {
+page = pageLink1.id
+console.log(page)
+})
 
-// const pageLink2 = document.querySelector('.footer-2-element');
-// pageLink2.addEventListener('click', () => {
-// page = pageLink2.id
-// console.log(page)
-// })
+const pageLink2 = document.querySelector('.footer-2-element');
+pageLink2.addEventListener('click', () => {
+page = pageLink2.id
+console.log(page)
+})
 
-// const pageLink3 = document.querySelector('.footer-3-element');
-// pageLink3.addEventListener('click', () => {
-// page = pageLink3.id
-// console.log(page)
-// })
+const pageLink3 = document.querySelector('.footer-3-element');
+pageLink3.addEventListener('click', () => {
+page = pageLink3.id
+console.log(page)
+})
 
-// const pageLink4 = document.querySelector('.footer-4-element');
-// pageLink4.addEventListener('click', () => {
-// page = pageLink4.id
-// console.log(page)
-// })
+const pageLink4 = document.querySelector('.footer-4-element');
+pageLink4.addEventListener('click', () => {
+page = pageLink4.id
+console.log(page)
+})
 
-// const pageLink5 = document.querySelector('.footer-5-element');
-// pageLink5.addEventListener('click', () => {
-// page = pageLink5.id
-// console.log(page)
-// })
+const pageLink5 = document.querySelector('.footer-5-element');
+pageLink5.addEventListener('click', () => {
+page = pageLink5.id
+console.log(page)
+})
 
-// const pageLink6 = document.querySelector('.footer-6-element');
-// pageLink6.addEventListener('click', () => {
-// page = pageLink6.id
-// console.log(page)
-// })
+const pageLink6 = document.querySelector('.footer-6-element');
+pageLink6.addEventListener('click', () => {
+page = pageLink6.id
+console.log(page)
+})
 
-// const pageLink7 = document.querySelector('.footer-7-element');
-// pageLink7.addEventListener('click', () => {
-// page = pageLink7.id
-// console.log(page)
-// })
+const pageLink7 = document.querySelector('.footer-7-element');
+pageLink7.addEventListener('click', () => {
+page = pageLink7.id
+console.log(page)
+})
