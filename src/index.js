@@ -161,19 +161,19 @@ const onRenderFooter = (page) => {
 // -------------------------------------------------
 
 
-onRenderFooter(page)
-const pageLink1 = document.querySelector('.footer-1-element');
-const pageLink2 = document.querySelector('.footer-2-element');
-const pageLink3 = document.querySelector('.footer-3-element');
-const pageLink4 = document.querySelector('.footer-4-element');
-const pageLink5 = document.querySelector('.footer-5-element');
-const pageLink6 = document.querySelector('.footer-6-element');
-const pageLink7 = document.querySelector('.footer-7-element');
+// onRenderFooter(page)
+// const pageLink1 = document.querySelector('.footer-1-element');
+// const pageLink2 = document.querySelector('.footer-2-element');
+// const pageLink3 = document.querySelector('.footer-3-element');
+// const pageLink4 = document.querySelector('.footer-4-element');
+// const pageLink5 = document.querySelector('.footer-5-element');
+// const pageLink6 = document.querySelector('.footer-6-element');
+// const pageLink7 = document.querySelector('.footer-7-element');
 
-pageLink1.addEventListener('click', (page) => {page = pageLink1.id; console.log(page); onRenderFooter(page)});
-pageLink2.addEventListener('click', (page) => {page = pageLink2.id; console.log(page); onRenderFooter(page)});
-pageLink3.addEventListener('click', (page) => {page = pageLink3.id; console.log(page); onRenderFooter(page)});
-pageLink4.addEventListener('click', (page) => {page = pageLink4.id; console.log(page); onRenderFooter(page)});
-pageLink5.addEventListener('click', (page) => {page = pageLink5.id; console.log(page); onRenderFooter(page)});
-pageLink6.addEventListener('click', (page) => {page = pageLink6.id; console.log(page); onRenderFooter(page)});
-pageLink7.addEventListener('click', (page) => {page = pageLink7.id; console.log(page); onRenderFooter(page)});
+// pageLink1.addEventListener('click', (page) => {page = pageLink1.id; console.log(page); onRenderFooter(page)});
+// pageLink2.addEventListener('click', (page) => {page = pageLink2.id; console.log(page); onRenderFooter(page)});
+// pageLink3.addEventListener('click', (page) => {page = pageLink3.id; console.log(page); onRenderFooter(page)});
+// pageLink4.addEventListener('click', (page) => {page = pageLink4.id; console.log(page); onRenderFooter(page)});
+// pageLink5.addEventListener('click', (page) => {page = pageLink5.id; console.log(page); onRenderFooter(page)});
+// pageLink6.addEventListener('click', (page) => {page = pageLink6.id; console.log(page); onRenderFooter(page)});
+// pageLink7.addEventListener('click', (page) => {page = pageLink7.id; console.log(page); onRenderFooter(page)});
