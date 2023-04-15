@@ -9,7 +9,7 @@ const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 let page = 1;
-let totalPage = 10
+let totalPage = 10;
 const footer = document.querySelector('.footer')
 async function checkPopular(){
   try{
@@ -129,35 +129,35 @@ siteBtn.addEventListener("click",  (e) => {
 // -------------------------------------------------
 
 
-const onRenderFooter = (page) => {
-  footer.innerHTML=''
-  if(page>3){
-    const markup = `
-      <ul class="footer-list">
-        <li class="footer-1-element" id=${parseInt(page)-3}><p>${parseInt(page)-3}</p></li>
-        <li class="footer-2-element" id=${parseInt(page)-2}><p>${parseInt(page)-2}</p></li>
-        <li class="footer-3-element" id=${parseInt(page)-1}><p>${parseInt(page)-1}</p></li>
-        <li class="footer-4-element" id=${parseInt(page)}><p>${parseInt(page)}</p></li>
-        <li class="footer-5-element" id=${parseInt(page)+1}><p>${parseInt(page)+1}</p></li>
-        <li class="footer-6-element" id=${parseInt(page)+2}><p>${parseInt(page)+2}</p></li>
-        <li class="footer-7-element" id=${parseInt(page)+3}><p>${parseInt(page)+3}</p></li>
-      </ul>`
-    footer.insertAdjacentHTML('beforeend', markup);
-  return} 
-    else{  
-      const markup =  `
-      <ul class="footer-list">
-        <li class="footer-1-element" id=1><p>1</p></li>
-        <li class="footer-2-element" id=2><p>2</p></li>
-        <li class="footer-3-element" id=3><p>3</p></li>
-        <li class="footer-4-element" id=4><p>4</p></li>
-        <li class="footer-5-element" id=5><p>5</p></li>
-        <li class="footer-6-element" id=6><p>6</p></li>
-        <li class="footer-7-element" id=7><p>7</p></li>
-      </ul>`
-    footer.insertAdjacentHTML('beforeend', markup);
-  return}
-}
+// const onRenderFooter = (page) => {
+//   footer.innerHTML=''
+//   if(page>3){
+//     const markup = `
+//       <ul class="footer-list">
+//         <li class="footer-1-element" id=${parseInt(page)-3}><p>${parseInt(page)-3}</p></li>
+//         <li class="footer-2-element" id=${parseInt(page)-2}><p>${parseInt(page)-2}</p></li>
+//         <li class="footer-3-element" id=${parseInt(page)-1}><p>${parseInt(page)-1}</p></li>
+//         <li class="footer-4-element" id=${parseInt(page)}><p>${parseInt(page)}</p></li>
+//         <li class="footer-5-element" id=${parseInt(page)+1}><p>${parseInt(page)+1}</p></li>
+//         <li class="footer-6-element" id=${parseInt(page)+2}><p>${parseInt(page)+2}</p></li>
+//         <li class="footer-7-element" id=${parseInt(page)+3}><p>${parseInt(page)+3}</p></li>
+//       </ul>`
+//     footer.insertAdjacentHTML('beforeend', markup);
+//   return} 
+//     else{  
+//       const markup =  `
+//       <ul class="footer-list">
+//         <li class="footer-1-element" id=1><p>1</p></li>
+//         <li class="footer-2-element" id=2><p>2</p></li>
+//         <li class="footer-3-element" id=3><p>3</p></li>
+//         <li class="footer-4-element" id=4><p>4</p></li>
+//         <li class="footer-5-element" id=5><p>5</p></li>
+//         <li class="footer-6-element" id=6><p>6</p></li>
+//         <li class="footer-7-element" id=7><p>7</p></li>
+//       </ul>`
+//     footer.insertAdjacentHTML('beforeend', markup);
+//   return}
+// }
 
 // -------------------------------------------------
 
@@ -200,24 +200,19 @@ const leftBtn = document.querySelector('.left-button')
 const rightBtn = document.querySelector('.right-button')
 
 poleF.innerHTML = 1
-poleL.innerHTML = totalPage
+poleL.innerHTML = 2
 
 const renderFoot = (page) => {
+  footer.classList.remove('isHidden')
   if (totalPage==1){
-    poleF.innerHTML = ``
-    poleA.innerHTML = ``
-    poleB.innerHTML = ``
-    poleC.innerHTML = ``
-    poleD.innerHTML = ``
-    poleE.innerHTML = ``
-    poleL.innerHTML = ``
+    footer.classList.add('isHidden')
   }
   else if(page>3){
-  poleA.innerHTML = `${parseInt(page)-2}`
-  poleB.innerHTML = `${parseInt(page)-1}`
-  poleC.innerHTML = `${parseInt(page)}`
-  poleD.innerHTML = `${parseInt(page)+1}`
-  poleE.innerHTML = `${parseInt(page)+2}`
+    poleA.innerHTML = `${parseInt(page)-2}`
+    poleB.innerHTML = `${parseInt(page)-1}`
+    poleC.innerHTML = `${parseInt(page)}`
+    poleD.innerHTML = `${parseInt(page)+1}`
+    poleE.innerHTML = `${parseInt(page)+2}`
   }
     else{
       poleA.innerHTML = 2
@@ -237,3 +232,5 @@ poleFirst.addEventListener('click', renderF = ()=>{page = poleF.innerHTML; rende
 poleLast.addEventListener('click', renderF = ()=>{page = poleL.innerHTML; renderFoot(page)})
 leftBtn.addEventListener('click', renderF = ()=>{page = parseInt(poleC.innerHTML)-1; renderFoot(page)})
 rightBtn.addEventListener('click', renderF = ()=>{page = parseInt(poleC.innerHTML)+1; renderFoot(page)})
+
+renderFoot(page)
