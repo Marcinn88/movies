@@ -9,15 +9,19 @@ const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 let page = 1;
-let totalPage = 10;
+let totalPage = 50;
 const footer = document.querySelector('.footer')
+
 async function checkPopular(){
   try{
     // const response = await fetch(discoverUrl+apiKey+'&sort_by=popularity.desc')
-    const response = await fetch(popularUrl+apiKey+'&page='+page)
+    const response = await fetch(`${popularUrl}${apiKey}&page=${page}`)
     const data = await response.json();
     console.log(data)
+    let totalPage = data.total_pages
     onRenderGallery(data.results)
+    return totalPage
+
   }catch(error){
     console.error(error);
   }
@@ -49,6 +53,7 @@ siteBtn.addEventListener("click",  (e) => {
     const movieGallery = document.querySelector('.movie_gallery')
 
     function onRenderGallery(elements) {
+      movieGallery.innerHTML = ''
       const markup = elements
         .map(
           ({
@@ -67,12 +72,7 @@ siteBtn.addEventListener("click",  (e) => {
               <p class="info-item title-item">
               ${title}
            </p>
-                <p class="info-item">
-                   ${overview}
-                </p>
-                <p class="info-item">
-                ${popularity}
-             </p>
+
               </div></div>`;
             } else {
               return `<div class="photo-card">
@@ -83,12 +83,7 @@ siteBtn.addEventListener("click",  (e) => {
               <p class="info-item title-item">
               ${title}
            </p>
-                <p class="info-item">
-                   ${overview}
-                </p>
-                <p class="info-item">
-                ${popularity}
-             </p>
+
               </div></div>`;
             }
 
@@ -200,12 +195,63 @@ const leftBtn = document.querySelector('.left-button')
 const rightBtn = document.querySelector('.right-button')
 
 poleF.innerHTML = 1
-poleL.innerHTML = 2
+poleL.innerHTML = totalPage
 
 const renderFoot = (page) => {
   footer.classList.remove('isHidden')
+  poleA.classList.remove('isHidden')
+  poleB.classList.remove('isHidden')
+  poleC.classList.remove('isHidden')
+  poleD.classList.remove('isHidden')
+  poleE.classList.remove('isHidden')
+  poleL.classList.remove('isHidden')
   if (totalPage==1){
     footer.classList.add('isHidden')
+  }
+  else if(totalPage<7){
+    poleA.innerHTML = `${parseInt(page)-2}`
+    poleB.innerHTML = `${parseInt(page)-1}`
+    poleC.innerHTML = `${parseInt(page)}`
+    poleD.innerHTML = `${parseInt(page)+1}`
+    poleE.innerHTML = `${parseInt(page)+2}`
+    poleL.classList.add('isHidden')
+    checkPopular()
+  }
+  else if(totalPage<6){
+    poleA.innerHTML = `${parseInt(page)-2}`
+    poleB.innerHTML = `${parseInt(page)-1}`
+    poleC.innerHTML = `${parseInt(page)}`
+    poleD.innerHTML = `${parseInt(page)+1}`
+    poleE.classList.add('isHidden')
+    poleL.classList.add('isHidden')
+    checkPopular()
+  }
+  else if(totalPage<5){
+    poleA.innerHTML = `${parseInt(page)-2}`
+    poleB.innerHTML = `${parseInt(page)-1}`
+    poleC.innerHTML = `${parseInt(page)}`
+    poleD.classList.add('isHidden')
+    poleE.classList.add('isHidden')
+    poleL.classList.add('isHidden')
+    checkPopular()
+  }
+  else if(totalPage<4){
+    poleA.innerHTML = `${parseInt(page)-2}`
+    poleB.innerHTML = `${parseInt(page)-1}`
+    poleC.classList.add('isHidden')
+    poleD.classList.add('isHidden')
+    poleE.classList.add('isHidden')
+    poleL.classList.add('isHidden')
+    checkPopular()
+  }
+  else if(totalPage<3){
+    poleA.innerHTML = `${parseInt(page)-2}`
+    poleB.classList.add('isHidden')
+    poleC.classList.add('isHidden')
+    poleD.classList.add('isHidden')
+    poleE.classList.add('isHidden')
+    poleL.classList.add('isHidden')
+    checkPopular()
   }
   else if(page>3){
     poleA.innerHTML = `${parseInt(page)-2}`
@@ -213,6 +259,7 @@ const renderFoot = (page) => {
     poleC.innerHTML = `${parseInt(page)}`
     poleD.innerHTML = `${parseInt(page)+1}`
     poleE.innerHTML = `${parseInt(page)+2}`
+    checkPopular()
   }
     else{
       poleA.innerHTML = 2
@@ -220,6 +267,7 @@ const renderFoot = (page) => {
       poleC.innerHTML = 4
       poleD.innerHTML = 5
       poleE.innerHTML = 6
+      checkPopular()
     }
 }
 
@@ -231,6 +279,6 @@ pole5.addEventListener('click', renderF = ()=>{page = poleE.innerHTML; renderFoo
 poleFirst.addEventListener('click', renderF = ()=>{page = poleF.innerHTML; renderFoot(page)})
 poleLast.addEventListener('click', renderF = ()=>{page = poleL.innerHTML; renderFoot(page)})
 leftBtn.addEventListener('click', renderF = ()=>{page = parseInt(poleC.innerHTML)-1; renderFoot(page)})
-rightBtn.addEventListener('click', renderF = ()=>{page = parseInt(poleC.innerHTML)+1; renderFoot(page)})
+rightBtn.addEventListener('click', renderF = ()=>{if(totalPage!==page+3){page = parseInt(poleC.innerHTML)+1; renderFoot(page)}{renderFoot(page)}})
 
 renderFoot(page)
