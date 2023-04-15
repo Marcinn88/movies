@@ -203,12 +203,29 @@ poleF.innerHTML = 1
 poleL.innerHTML = totalPage
 
 const renderFoot = (page) => {
+  if (totalPage==1){
+    poleF.innerHTML = ``
+    poleA.innerHTML = ``
+    poleB.innerHTML = ``
+    poleC.innerHTML = ``
+    poleD.innerHTML = ``
+    poleE.innerHTML = ``
+    poleL.innerHTML = ``
+  }
+  else if(page>3){
   poleA.innerHTML = `${parseInt(page)-2}`
   poleB.innerHTML = `${parseInt(page)-1}`
   poleC.innerHTML = `${parseInt(page)}`
   poleD.innerHTML = `${parseInt(page)+1}`
   poleE.innerHTML = `${parseInt(page)+2}`
-
+  }
+    else{
+      poleA.innerHTML = 2
+      poleB.innerHTML = 3
+      poleC.innerHTML = 4
+      poleD.innerHTML = 5
+      poleE.innerHTML = 6
+    }
 }
 
 pole1.addEventListener('click', renderF = ()=>{page = poleA.innerHTML; renderFoot(page)})
@@ -218,3 +235,5 @@ pole4.addEventListener('click', renderF = ()=>{page = poleD.innerHTML; renderFoo
 pole5.addEventListener('click', renderF = ()=>{page = poleE.innerHTML; renderFoot(page)})
 poleFirst.addEventListener('click', renderF = ()=>{page = poleF.innerHTML; renderFoot(page)})
 poleLast.addEventListener('click', renderF = ()=>{page = poleL.innerHTML; renderFoot(page)})
+leftBtn.addEventListener('click', renderF = ()=>{page = parseInt(poleC.innerHTML)-1; renderFoot(page)})
+rightBtn.addEventListener('click', renderF = ()=>{page = parseInt(poleC.innerHTML)+1; renderFoot(page)})
