@@ -9,6 +9,7 @@ const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 let page = 1;
+let totalPage = 10
 const footer = document.querySelector('.footer')
 async function checkPopular(){
   try{
@@ -177,3 +178,28 @@ const onRenderFooter = (page) => {
 // pageLink5.addEventListener('click', (page) => {page = pageLink5.id; console.log(page); onRenderFooter(page)});
 // pageLink6.addEventListener('click', (page) => {page = pageLink6.id; console.log(page); onRenderFooter(page)});
 // pageLink7.addEventListener('click', (page) => {page = pageLink7.id; console.log(page); onRenderFooter(page)});
+
+
+const poleFirst = document.querySelector('.first');
+const pole1 = document.querySelector('.one');
+const pole2 = document.querySelector('.two');
+const pole3 = document.querySelector('.three');
+const pole4 = document.querySelector('.four');
+const pole5 = document.querySelector('.five');
+const poleLast = document.querySelector('.last');
+
+const poleF = document.querySelector('.f') 
+const poleA = document.querySelector('.a') 
+const poleB = document.querySelector('.b') 
+const poleC = document.querySelector('.c') 
+const poleD = document.querySelector('.d') 
+const poleE = document.querySelector('.e') 
+const poleL = document.querySelector('.l')
+
+const leftBtn = document.querySelector('.left-button')
+const rightBtn = document.querySelector('.right-button')
+
+poleF.innerHTML = 1
+poleL.innerHTML = totalPage
+
+pole.innerHTML = 1
