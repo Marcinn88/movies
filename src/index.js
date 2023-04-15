@@ -205,7 +205,7 @@ poleL.innerHTML = totalPage
 
 
 pole2.addEventListener('click', renderF = ()=>{
-  page = poleC.innerHTML
+  page = poleB.innerHTML
   poleA.innerHTML = `${parseInt(page)-2}`
   poleB.innerHTML = `${parseInt(page)-1}`
   poleC.innerHTML = `${parseInt(page)}`
@@ -221,3 +221,12 @@ poleC.innerHTML = `${parseInt(page)}`
 poleD.innerHTML = `${parseInt(page)+1}`
 poleE.innerHTML = `${parseInt(page)+2}`
 })
+
+pole4.addEventListener('click', renderF = ()=>{
+  page = poleD.innerHTML
+  poleA.innerHTML = `${parseInt(page)-2}`
+  poleB.innerHTML = `${parseInt(page)-1}`
+  poleC.innerHTML = `${parseInt(page)}`
+  poleD.innerHTML = `${parseInt(page)+1}`
+  poleE.innerHTML = `${parseInt(page)+2}`
+  })
