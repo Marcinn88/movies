@@ -202,31 +202,19 @@ const rightBtn = document.querySelector('.right-button')
 poleF.innerHTML = 1
 poleL.innerHTML = totalPage
 
-
-
-pole2.addEventListener('click', renderF = ()=>{
-  page = poleB.innerHTML
+const renderFoot = (page) => {
   poleA.innerHTML = `${parseInt(page)-2}`
   poleB.innerHTML = `${parseInt(page)-1}`
   poleC.innerHTML = `${parseInt(page)}`
   poleD.innerHTML = `${parseInt(page)+1}`
   poleE.innerHTML = `${parseInt(page)+2}`
-  })
 
-pole3.addEventListener('click', renderF = ()=>{
-page = poleC.innerHTML
-poleA.innerHTML = `${parseInt(page)-2}`
-poleB.innerHTML = `${parseInt(page)-1}`
-poleC.innerHTML = `${parseInt(page)}`
-poleD.innerHTML = `${parseInt(page)+1}`
-poleE.innerHTML = `${parseInt(page)+2}`
-})
+}
 
-pole4.addEventListener('click', renderF = ()=>{
-  page = poleD.innerHTML
-  poleA.innerHTML = `${parseInt(page)-2}`
-  poleB.innerHTML = `${parseInt(page)-1}`
-  poleC.innerHTML = `${parseInt(page)}`
-  poleD.innerHTML = `${parseInt(page)+1}`
-  poleE.innerHTML = `${parseInt(page)+2}`
-  })
+pole1.addEventListener('click', renderF = ()=>{page = poleA.innerHTML; renderFoot(page)})
+pole2.addEventListener('click', renderF = ()=>{page = poleB.innerHTML; renderFoot(page)})
+pole3.addEventListener('click', renderF = ()=>{page = poleC.innerHTML; renderFoot(page)})
+pole4.addEventListener('click', renderF = ()=>{page = poleD.innerHTML; renderFoot(page)})
+pole5.addEventListener('click', renderF = ()=>{page = poleE.innerHTML; renderFoot(page)})
+poleFirst.addEventListener('click', renderF = ()=>{page = poleF.innerHTML; renderFoot(page)})
+poleLast.addEventListener('click', renderF = ()=>{page = poleL.innerHTML; renderFoot(page)})
