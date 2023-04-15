@@ -202,4 +202,22 @@ const rightBtn = document.querySelector('.right-button')
 poleF.innerHTML = 1
 poleL.innerHTML = totalPage
 
-pole.innerHTML = 1
+
+
+pole2.addEventListener('click', renderF = ()=>{
+  page = poleC.innerHTML
+  poleA.innerHTML = `${parseInt(page)-2}`
+  poleB.innerHTML = `${parseInt(page)-1}`
+  poleC.innerHTML = `${parseInt(page)}`
+  poleD.innerHTML = `${parseInt(page)+1}`
+  poleE.innerHTML = `${parseInt(page)+2}`
+  })
+
+pole3.addEventListener('click', renderF = ()=>{
+page = poleC.innerHTML
+poleA.innerHTML = `${parseInt(page)-2}`
+poleB.innerHTML = `${parseInt(page)-1}`
+poleC.innerHTML = `${parseInt(page)}`
+poleD.innerHTML = `${parseInt(page)+1}`
+poleE.innerHTML = `${parseInt(page)+2}`
+})
