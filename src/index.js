@@ -9,7 +9,7 @@ const popularUrl = "https://api.themoviedb.org/3/movie/popular"
 const siteInput = document.querySelector('.search-form__input');
 const siteBtn = document.querySelector('.search_button');
 let page = 1;
-let totalPage = 50;
+let totalPage = 10;
 const footer = document.querySelector('.footer')
 
 async function checkPopular(){
