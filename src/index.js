@@ -17,7 +17,7 @@ async function checkPopular(){
     // const response = await fetch(discoverUrl+apiKey+'&sort_by=popularity.desc')
     const response = await fetch(`${popularUrl}${apiKey}&page=${page}`)
     const data = await response.json();
-    console.log(data)
+    // console.log(data)
     let totalPage = data.total_pages
     onRenderGallery(data.results)
     return totalPage
@@ -33,15 +33,31 @@ async function checkMovie(movieTitle){
 try {
   const response = await fetch(apiUrl+apiKey+'&query='+ movieTitle+'&page='+ page);
   const data = await response.json();
-  console.log(data)
+  // console.log(data)
   movieGallery.innerHTML=''
-   Notify.success('Hooray! We found movie. First result is '+ data.results[0].original_title)
-   onRenderGallery(data.results)
+  Notify.success('Hooray! We found movie. First result is '+ data.results[0].original_title)
+
+    // console.log(data.results)
+  const defData = data.results.map((data) => {
+      if(data.poster_path==null){
+        data.poster_path = 'defaultImage'}
+      return data
+      })
+  console.log(defData)
+
+  onRenderGallery(data)
 } catch (error) {
   Notify.failure('No results for '+ movieTitle +'!')
   console.error(error);
 }}
 
+// const defaultPoster = (data) => {
+// data.results.map((data) => {
+//       if(data.poster_path==null){
+//         data.poster_path = 'defaultImage'}
+//       return data
+//       })}
+//   console.log(defaultPoster(data))
 
 siteBtn.addEventListener("click",  (e) => {
   e.preventDefault();
